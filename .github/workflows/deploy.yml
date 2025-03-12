@@ -16,15 +16,15 @@ jobs:
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb
       MONGODB_CLUSTER_ADDRESS: mongodb # goes from *1
-      MONGODB_USERNAME: root
-      MONGODB_PASSWORD: example
+      MONGODB_USERNAME: root # *2
+      MONGODB_PASSWORD: example # *3
       PORT: 8080
     services:
       mongodb: # *1 (name can be any)
         image: mongo
         env:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: example
+          MONGO_INITDB_ROOT_USERNAME: root # *2
+          MONGO_INITDB_ROOT_PASSWORD: example # *3
     steps:
       - name: Get Code
         uses: actions/checkout@v3
